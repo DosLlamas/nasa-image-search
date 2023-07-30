@@ -1,0 +1,147 @@
+.search-bar {
+    width: 300px;
+}
+
+.search-bar:hover {
+    background-color: yellow;
+    transition: .2s;
+}
+
+span {
+    color:azure;
+}
+
+body {
+    padding: 2em;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/80/Backgorund.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: azure;
+}
+
+#main-title {
+    display: flex;
+    font-size: 2em;
+    border-top: solid #15418C 10px;
+    border-bottom:solid  #15418C 10px;
+    padding: 0.75em 0 0.4em 0;
+}
+
+.sub-title {
+    font-size: 0.5em;
+    color:rgb(158, 121, 121);
+}
+
+h2 {
+    color:RED;
+    text-align: center;
+}
+
+#image-description {
+    text-align: center;
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+} 
+
+#nasa-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+#prevButton {
+    position: flex;
+    background-color: white;
+    color: rgb(0, 0, 0);
+    padding-left: 13px;
+    padding-right: 13px;
+    margin-right: 7px;
+    margin-top: 7px;
+}
+#prevButton:hover {
+    background-color: rgb(120, 146, 223);
+    transition: .2s;
+}
+#nextButton {
+    position: flex;
+    background-color: white;
+    color: rgb(0, 0, 0);
+    padding-left: 13px;
+    padding-right: 13px;
+}
+#nextButton:hover {
+    background-color: rgb(120, 146, 223);
+    transition: .2s;
+}
+
+.search-button {
+    position: flex;
+    background-color: white;
+    color: rgb(0, 0, 0);
+    padding-left: 13px;
+    padding-right: 13px;
+}
+.search-button:hover {
+    background-color: rgb(120, 146, 223);
+    transition: .2s;
+}
+
+/* .two-columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 4em;
+} */
+
+.one {
+    transform: translate3d(0,0,0);
+    display: block;
+    overflow-x: auto;
+    scrollbar-width: none;
+    position: relative;
+    white-space: nowrap;
+}
+
+.two {
+    margin-top: 16px;
+    min-height: auto;
+    padding: 0 20px 16px;
+    min-height: 52px;
+    padding: 3px 0 6px;
+} 
+
+.three {
+    padding-right: 8px;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 15px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #15418C;
+    border-radius: 10px;
+}
+  
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: yellow;
+    border-radius: 10px;
+}
+
+.gallery-image {
+    width:  300px;
+    height: 300px;
+    object-fit: cover;  
+    transition: all .5s ease;
+}
+
+.gallery-image:hover {
+    width: 400px;
+    height: 400px;
+}
+
+/* Start https://www.cursors-4u.com */ * {cursor: url(https://cur.cursors-4u.net/nature/nat-7/nat606.cur), auto !important;} /* End https://www.cursors-4u.com */
