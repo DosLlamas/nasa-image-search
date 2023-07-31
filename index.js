@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentIndex = 0;
 
     let renderSearch = (spaceObject) => {
-        // console.log(spaceObject);
         imgTitle.innerText = spaceObject.data[0].title;
         imgDescription.innerText = spaceObject.data[0].description;
         if (spaceObject.links !== undefined) {
@@ -20,15 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function galleryDisplay(data) {
-        const newImgDataArray = resultArray.map((data) => {
-            return data.links;})
-            //console.log( "newImgDataArray: " , newImgDataArray )
-        const filteredArray = newImgDataArray.filter(element => {
-            return element !== undefined;})
-            //console.log( "filteredArray: " , filteredArray )
-        const finalImageArray = filteredArray.map(element => {
-            return element[0].href;})
-            //console.log( "finalImageArray: ", finalImageArray )
+        const newImgDataArray = resultArray.map((data) => data.links)
+        console.log( "resultArray: " , resultArray )
+        const filteredArray = newImgDataArray.filter(element => element !== undefined)
+        // console.log( "filteredArray: " , filteredArray )
+        const finalImageArray = filteredArray.map(element => element[0].href)
 
         const galleryContainer = document.querySelector('#gallery');
         galleryContainer.innerHTML = '';
@@ -38,6 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
             galleryImage.className = "gallery-image";
             galleryImage.src = imageUrl;
             galleryContainer.append(galleryImage);
+            galleryImage.addEventListener("click", e => {
+
+            })
         })
     }
 
@@ -76,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch(`https://images-api.nasa.gov/search?q=${searchInput}`)
             .then(response => response.json())
             .then(dataObj => {
-            //console.log(dataObj.collection.items)
+            // console.log(dataObj.collection.items)
             resultArray = dataObj.collection.items;
             //console.log ( "resultArray: " , resultArray)
             if(resultArray.length > 0) {
