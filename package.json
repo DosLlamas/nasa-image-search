@@ -1,0 +1,23 @@
+{
+  "name": "phase-1-project-main",
+  "version": "1.0.0",
+  "description": "Welcome to the NASA Space Image Generator! Project by Calvin, Leah, & Nathan :)",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tailwindcss -i ./style.css -o ./dist/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DosLlamas/nasa-image-search.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DosLlamas/nasa-image-search/issues"
+  },
+  "homepage": "https://github.com/DosLlamas/nasa-image-search#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.3.3"
+  }
+}
