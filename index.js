@@ -18,24 +18,29 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function galleryDisplay(data) {
-        const newImgDataArray = resultArray.map((data) => data.links)
-        console.log( "resultArray: " , resultArray )
-        const filteredArray = newImgDataArray.filter(element => element !== undefined)
-        // console.log( "filteredArray: " , filteredArray )
-        const finalImageArray = filteredArray.map(element => element[0].href)
-
+    const selectImage = (title) => {
+        fetch(`https://images-api.nasa.gov/search?q=${title}`)
+            .then(response => response.json())
+            .then(dataObj => {
+                renderSearch(dataObj?.collection?.items?.[0])
+            })
+    }
+    
+    function galleryDisplay() {
         const galleryContainer = document.querySelector('#gallery');
         galleryContainer.innerHTML = '';
-
-        finalImageArray.forEach (imageUrl => {
-            const galleryImage = document.createElement('img');
-            galleryImage.className = "gallery-image";
-            galleryImage.src = imageUrl;
-            galleryContainer.append(galleryImage);
-            galleryImage.addEventListener("click", e => {
-
-            })
+        resultArray.forEach((data) => {
+            if(data.links[0].href !== undefined){
+                const galleryImage = document.createElement('img');
+                galleryImage.className = "gallery-image";
+                galleryImage.src = data.links[0].href;
+                galleryImage.title = data.data[0].title
+                galleryContainer.append(galleryImage);
+                galleryImage.addEventListener("click", e => {
+                    const selectedImgTitle = e.target.title;
+                    selectImage(selectedImgTitle)
+                })
+            }
         })
     }
 
