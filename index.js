@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const selectImage = (title) => {
-        fetch(`https://images-api.nasa.gov/search?q=${title}`)
+        fetch(`https://images-api.nasa.gov/search?title=${title}`)
             .then(response => response.json())
             .then(dataObj => {
                 renderSearch(dataObj?.collection?.items?.[0])
