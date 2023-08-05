@@ -2133,8 +2133,8 @@ h1 {
 }
 
 .gallery-image {
-  width: 300px;
-  height: 300px;
+  width: 15%;
+  height: auto;
   -o-object-fit: cover;
   object-fit: cover;
   transition: all 0.5s ease;
