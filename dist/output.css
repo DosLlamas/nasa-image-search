@@ -2141,8 +2141,8 @@ h1 {
 }
 
 .gallery-image:hover {
-  width: 400px;
-  height: 400px;
+  width: 15%;
+  height: auto;
 }
 
 /* Start https://www.cursors-4u.com */
