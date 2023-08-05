@@ -18,8 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    const selectImage = (title) => {
-        fetch(`https://images-api.nasa.gov/search?title=${title}`)
+    const selectImage = (id) => {
+        fetch(`https://images-api.nasa.gov/search?nasa_id=${id}`)
             .then(response => response.json())
             .then(dataObj => {
                 renderSearch(dataObj?.collection?.items?.[0])
@@ -35,10 +35,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 galleryImage.className = "gallery-image";
                 galleryImage.src = data.links[0].href;
                 galleryImage.title = data.data[0].title
+                galleryImage.id = data.data[0].nasa_id
+                
                 galleryContainer.append(galleryImage);
                 galleryImage.addEventListener("click", e => {
-                    const selectedImgTitle = e.target.title;
-                    selectImage(selectedImgTitle)
+                    const selectedImg = e.target.id;
+                    console.log(selectedImg.id)
+                    selectImage(selectedImg)
                 })
             }
         })
