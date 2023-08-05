@@ -5,7 +5,17 @@ html {
     overflow-x: hidden;
 }
 h1{
-    font-size: 32px;
+    font-size: 56px;
+}
+@media (max-width: 768px) {
+    h1{
+        font-size: 10px;
+    }
+}
+@media (max-width: 1000px) {
+    h1{
+        font-size: 12px;
+    }
 }
 body {
     overflow-x: hidden;
@@ -36,7 +46,10 @@ body {
 #image-description {
    padding:5%;
 } 
-
+#nasa-logo {
+    width:8%;
+    height: auto;
+}
 #nasa-image {
     background-repeat: no-repeat;
     background-position: 50%;
