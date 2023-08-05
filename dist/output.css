@@ -2133,7 +2133,7 @@ h1 {
 }
 
 .gallery-image {
-  width: 15%;
+  width: 10%;
   height: auto;
   -o-object-fit: cover;
   object-fit: cover;
