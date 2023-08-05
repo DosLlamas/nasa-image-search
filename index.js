@@ -40,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 galleryContainer.append(galleryImage);
                 galleryImage.addEventListener("click", e => {
                     const selectedImg = e.target.id;
-                    console.log(selectedImg.id)
                     selectImage(selectedImg)
                 })
             }
